@@ -1,0 +1,49 @@
+
+
+AULA 1 
+
+instalando next react:
+ npm install next react react-dom {
+
+    cria os arquivos package-lock e package.json
+
+
+ }
+
+ scrips para roda o next ( colar no package.json): 
+
+    "scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint"
+}
+
+ rodando o next: 
+
+ terminal {
+   npm run dev
+ }
+   
+
+estilização das paginas : 
+
+  instalar stlyed-components {
+     npm install styled-components
+  }
+        arquivo next.config.js na pasta raiz{
+        /** @type {import('next').NextConfig} */
+
+    const nextConfig = {
+        reactStrictMode: true,
+        compiler: {
+          styledComponents: true,
+        },
+      }
+      
+      module.exports = nextConfig
+      }
+
+  importar styled{
+    import styled from "styled-components";
+  }
