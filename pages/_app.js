@@ -25,20 +25,34 @@ const theme = {
 // ThemeProvider -> Prover o tema para a app toda
 // ColorModeProvider -> Prove o state de light ou dark mode para todo mundo 
 
+function ProviderWrapper(props){
+    return (
+        <ColorModeProvider  initialMode={"dark"} >
+            {props.children}
+        </ColorModeProvider>
+    )
+
+}
 
 function MyApp({ Component, pageProps }) {
    
     const contexto = React.useContext(ColorModeContext);
-    console.log(contexto)
+    
     return (
-        <ColorModeProvider >
+        //<ColorModeProvider  initialMode={"dark"} >
         <ThemeProvider theme={theme[contexto.mode]}>
             <CSSReset />
             <Component {...pageProps} />
         </ThemeProvider>
-        </ColorModeProvider>
+        //</ColorModeProvider>
     )
 }
 
-export default MyApp;
+export default function _App(props){
+    return (
+        <ProviderWrapper>
+            <MyApp {...props}  />
+        </ProviderWrapper>
+    )
+};
 
