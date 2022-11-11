@@ -58,7 +58,7 @@ const StyledBanner = styled.div`
   background-color:blue;
   height:230px;
   //background-image:url(${config.bg});
-  background-image:url(${({bg})=> bg})
+  background-image:url(${({bg})=> bg};
 
 
 `
