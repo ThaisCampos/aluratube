@@ -1,6 +1,5 @@
 import config from "../config.json";
 import styled from "styled-components";
-import { CSSReset } from "../components/CSSReset_index";
 import Menu from "../components/Menu";
 import { StyledTimeline } from "../components/Timeline";
 import Image from 'next/image'
@@ -19,11 +18,11 @@ function HomePage() {
   //const valorDoFiltro = "Frost";
   return (
     <>
-      <CSSReset />
+     
       <div>
-       
+       {/* Prop Drilling*/}
         <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
-        
+        {/*<Banner/>*/}
         <Header/>
         <Timeline searchValue={valorDoFiltro} playlists={config.playlists}/>
        
@@ -39,6 +38,9 @@ export default HomePage;
 //}
 
 const StyledHeader = styled.div`
+
+    background-color: ${({theme})=> theme.backgroundLevel1};
+
   img {
     width: 80px;
     height: 80px;
