@@ -28,9 +28,11 @@ const theme = {
 
 function MyApp({ Component, pageProps }) {
    
+    const contexto = React.useContext(ColorModeContext);
+    console.log(contexto)
     return (
         <ColorModeProvider >
-        <ThemeProvider theme={theme.light}>
+        <ThemeProvider theme={theme[contexto.mode]}>
             <CSSReset />
             <Component {...pageProps} />
         </ThemeProvider>
